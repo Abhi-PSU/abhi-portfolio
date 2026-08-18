@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhi Adusumilli — Data Science &amp; Business Analytics</title>
+<meta name="description" content="Abhi Adusumilli — Penn State data science student pursuing consulting, banking, and business analytics roles. Data engineering research, applied ML, and financial operations experience.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Georgia,serif%22 fill=%22%23101c33%22>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo">Abhi Adusumilli</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#toolkit">Toolkit</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#notes">Notes</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Penn State · Class of 2027</span>
+        <h1>I like the problems where the data has to hold up in the real world.</h1>
+        <p class="lede">I'm Abhi — a data science major at Penn State with a minor in business, working toward roles in consulting, banking, and data-driven business analytics. Before college I spent three years running the books and operations of an independent pharmacy, so I got used to numbers that had real consequences attached. Now I'm a data engineering research intern building assistive communication technology for people who can't speak, and I lead a student team applying machine learning to real customer data.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See selected work</a>
+          <a href="assets/Abhi_Adusumilli_Resume.pdf" class="btn btn-outline" download>Download résumé</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="assets/headshot.png" alt="Portrait of Abhinav Krishna Adusumilli" class="hero-photo">
+        <div class="photo-caption">Abhinav Krishna Adusumilli</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat">
+        <div class="num">$3M</div>
+        <div class="desc">Book of business I managed as an office manager, ages 16–19</div>
+      </div>
+      <div class="stat">
+        <div class="num">~16%</div>
+        <div class="desc">Revenue growth I drove through outreach programs in underserved markets</div>
+      </div>
+      <div class="stat">
+        <div class="num">2,000</div>
+        <div class="desc">COVID-19 tests administered under screening protocols I helped launch</div>
+      </div>
+      <div class="stat">
+        <div class="num">$10K</div>
+        <div class="desc">Event budget I managed as Treasurer of Penn State's International Club</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">01 · Selected Work</span>
+        <h2>Three projects I keep coming back to</h2>
+      </div>
+
+      <!-- Project 01 -->
+      <div class="project">
+        <div class="project-num">01</div>
+        <div>
+          <span class="eyebrow project-tag">Assistive Technology Research</span>
+          <h3>EMG-based sentence decoding for people who cannot speak</h3>
+          <p>Working with Given Voice on Beyond Eye Gaze — an AAC system that reads faint muscle signals from people with paralysis or quadriplegia and turns them into sentences. My job is to figure out where the model actually works and where it quietly fails, and to make that answer reproducible by someone who isn't me.</p>
+          <p>I built and documented the GCP data pipeline behind the research, wrote a data-collection protocol designed for handoff, and characterized decoding performance across sessions. The work is going into a poster submission for ACM ASSETS 2026.</p>
+        </div>
+        <div>
+          <div class="side-block">
+            <div class="side-label">What I did</div>
+            <ul>
+              <li>Built + documented a GCP research data pipeline</li>
+              <li>Characterized model behavior: what works, what doesn't, why</li>
+              <li>Authored a handoff-ready data collection protocol</li>
+              <li>Contributing to an ACM ASSETS 2026 poster submission</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Stack</div>
+            <div class="stack-tags">
+              <span>Python</span><span>Google Cloud</span><span>Signal processing</span><span>Git</span>
+            </div>
+          </div>
+          <div class="side-block">
+            <span class="project-link muted">Private research repository — available on request</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project">
+        <div class="project-num">02</div>
+        <div>
+          <span class="eyebrow project-tag">Data Product · Live</span>
+          <h3>Formula 1 season tracker</h3>
+          <p>A shipped web app that reconstructs a full F1 season — race-by-race results, driver and constructor standings as they moved, and the moments the championship actually turned. I race motorcycles as an amateur, so this started as a way to settle arguments and turned into a lesson in modeling event data that arrives in a strict order.</p>
+          <p>The interesting part wasn't the charts, it was the schema: one clean model of races, entries, and points that makes every standings view a query instead of a special case.</p>
+        </div>
+        <div>
+          <div class="side-block">
+            <div class="side-label">What I did</div>
+            <ul>
+              <li>Designed the race / entry / points data model</li>
+              <li>Built standings that recompute at any point in the season</li>
+              <li>Shipped and deployed it publicly</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Stack</div>
+            <div class="stack-tags">
+              <span>JavaScript</span><span>Data modeling</span><span>Vercel</span>
+            </div>
+          </div>
+          <div class="side-block link-row">
+            <a href="https://github.com/Abhi-PSU/F12013season" target="_blank" rel="noopener" class="project-link">View repository →</a>
+            <a href="https://f12013season.vercel.app" target="_blank" rel="noopener" class="project-link">Open the live site →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="project">
+        <div class="project-num">03</div>
+        <div>
+          <span class="eyebrow project-tag">Coursework · Team Lead</span>
+          <h3>Database solutions for Penn State student affairs</h3>
+          <p>Leading a team in Data Management for Data Sciences: we take real datasets, decide which data model and database actually fits the problem, and then build the thing. Our software works interactively against Penn State student-affairs systems. Most of the job is disagreeing productively about schemas before anyone writes code.</p>
+        </div>
+        <div>
+          <div class="side-block">
+            <div class="side-label">What I did</div>
+            <ul>
+              <li>Led the team through model + database selection</li>
+              <li>Applied ML methods to real customer data</li>
+              <li>Built interactive database management software</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Stack</div>
+            <div class="stack-tags">
+              <span>SQL</span><span>Python</span><span>Data modeling</span><span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">02 · Experience</span>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-date">May 2026 — Present</div>
+        <div class="timeline-role">
+          <h3>Given Voice</h3>
+          <div class="role-meta">Data Engineering Research Intern · Remote</div>
+        </div>
+        <div class="timeline-details">
+          <ul>
+            <li>Leading development of assistive communication (AAC) technology for people with physical disabilities</li>
+            <li>Built and documented a Google Cloud Platform data pipeline for research infrastructure</li>
+            <li>Authored a data collection protocol built for handoff and long-term reproducibility</li>
+            <li>Characterizing the Beyond Eye Gaze communication model, contributing to an ACM ASSETS 2026 poster</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-date">Aug 2024 — Present</div>
+        <div class="timeline-role">
+          <h3>Penn State IST</h3>
+          <div class="role-meta">Team Lead, Data Management · University Park</div>
+        </div>
+        <div class="timeline-details">
+          <ul>
+            <li>Managed a team applying machine learning to real customer data</li>
+            <li>Evaluated large-data problems and selected fitting data models and databases</li>
+            <li>Constructed database management software working against PSU student-affairs systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="timeline-date">Jan 2021 — Aug 2023</div>
+        <div class="timeline-role">
+          <h3>New Castle Pharmacy</h3>
+          <div class="role-meta">Office Manager &amp; Technician · New Castle, DE</div>
+        </div>
+        <div class="timeline-details">
+          <ul>
+            <li>Oversaw the books for a $3M business, focused on growth and new patient acquisition</li>
+            <li>Grew revenue ~16% through outreach programs in underserved markets</li>
+            <li>Launched community COVID-19 screening protocols — 2,000 tests administered</li>
+            <li>Supported 3 lead pharmacists with prescription and vaccination duties</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="block toolkit" id="toolkit">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">03 · Toolkit</span>
+        <h2>What I work with</h2>
+      </div>
+      <div class="toolkit-grid">
+        <div class="toolkit-col">
+          <h4>Analysis</h4>
+          <ul>
+            <li>Python · pandas</li>
+            <li>SQL &amp; data modeling</li>
+            <li>R</li>
+            <li>Machine learning methods</li>
+            <li>Statistics &amp; experiment design</li>
+          </ul>
+        </div>
+        <div class="toolkit-col">
+          <h4>Engineering</h4>
+          <ul>
+            <li>Google Cloud Platform</li>
+            <li>Data pipelines</li>
+            <li>Git / GitHub &amp; GitLab</li>
+            <li>JavaScript &amp; web deploys</li>
+          </ul>
+        </div>
+        <div class="toolkit-col">
+          <h4>Finance &amp; Business</h4>
+          <ul>
+            <li>Bloomberg Market Concepts</li>
+            <li>Financial statement analysis</li>
+            <li>Structured consulting frameworks</li>
+            <li>Client communication</li>
+          </ul>
+        </div>
+        <div class="toolkit-col">
+          <h4>Also</h4>
+          <ul>
+            <li>Telugu &amp; Hindi (fluent)</li>
+            <li>Technical documentation</li>
+            <li>Budget ownership</li>
+            <li>Amateur motorcycle racing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="block" id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">04 · Education</span>
+        <h2>Academic background</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-school">
+          <h3>The Pennsylvania State University</h3>
+          <div class="edu-meta">College of Information Sciences and Technology · University Park, PA</div>
+          <div class="edu-degree">Bachelor of Science in Data Science — Class of 2027</div>
+          <div class="edu-detail">Minor in Business and Liberal Arts · GPA 3.21 / 4.0</div>
+
+          <div class="side-label">Relevant coursework</div>
+          <div class="coursework">
+            <span>Financial Statement Analysis</span>
+            <span>Advanced Financial Management</span>
+            <span>Microeconomic Analysis</span>
+            <span>International Finance</span>
+            <span>Financial &amp; Managerial Accounting</span>
+            <span>Data Management</span>
+            <span>Statistical Reasoning &amp; Computation</span>
+            <span>Programming Large Data Models</span>
+            <span>Calculus I &amp; II</span>
+            <span>Discrete Math</span>
+          </div>
+        </div>
+        <div>
+          <div class="side-label">Certifications</div>
+          <ul class="cert-list">
+            <li><strong>Bloomberg Market Concepts</strong><br>Bloomberg Institute</li>
+            <li><strong>Consultant Practical Training Program</strong><br>Case simulations &amp; consulting frameworks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTES / LEADERSHIP -->
+  <section class="block" id="notes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">05 · Notes</span>
+        <h2>Leadership &amp; involvement</h2>
+      </div>
+      <div class="notes-grid">
+        <div class="note-card">
+          <h3>International Club at Penn State</h3>
+          <div class="note-meta">Treasurer · Reading, PA · Sept 2024 – Apr 2025</div>
+          <ul>
+            <li>Managed a $10,000 budget, winning best event two years running among all campus clubs</li>
+            <li>Planned and executed multicultural events with 300+ members in attendance</li>
+            <li>Served as primary liaison between club leadership and university staff</li>
+          </ul>
+        </div>
+        <div class="note-card">
+          <h3>Consultant Training Program</h3>
+          <div class="note-meta">Member · University Park, PA · Aug 2025 – Nov 2025</div>
+          <ul>
+            <li>Applied consulting frameworks across case simulations for mock clients</li>
+            <li>Delivered client-focused recommendations through structured needs assessments</li>
+            <li>Facilitated problem-solving sessions on business analysis and client communication</li>
+          </ul>
+        </div>
+      </div>
+      <div class="interests-row">
+        <span class="side-label">Interests</span>
+        <div class="coursework">
+          <span>Investment Club</span>
+          <span>International Affairs Club</span>
+          <span>Amateur Motorcycle Racing Driver</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow" style="color:#8fa8d4">Get in touch</span>
+          <h2>Let's talk.</h2>
+          <p class="lede">Open to internship and full-time roles in consulting, banking, and data / business analytics. I'm quick to respond and always glad to talk through a project.</p>
+          <div class="contact-actions">
+            <a href="mailto:abhiadusumilli2005@gmail.com" class="btn btn-light">Email me</a>
+            <a href="assets/Abhi_Adusumilli_Resume.pdf" class="btn btn-outline-light" download>Download résumé</a>
+          </div>
+        </div>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:abhiadusumilli2005@gmail.com">abhiadusumilli2005@gmail.com</a></li>
+          <li><span>Phone</span><a href="tel:+13024379966">(302) 437-9966</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/abhiadusumilli/" target="_blank" rel="noopener">linkedin.com/in/abhiadusumilli</a></li>
+          <li><span>GitHub</span><a href="https://github.com/Abhi-PSU" target="_blank" rel="noopener">github.com/Abhi-PSU</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <span>© 2026 Abhinav Krishna Adusumilli</span>
+    <span><a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
