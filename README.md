@@ -9,7 +9,7 @@ Static site (HTML/CSS/vanilla JS), deployed via GitHub Pages.
 
 - `index.html` — page content
 - `styles.css` — styling
-- `script.js` — mobile nav toggle
+- `script.js` — mobile nav, scroll-spy, back-to-top, and scroll reveal
 - `assets/` — headshot and downloadable résumé PDF
 
 ## Local preview
