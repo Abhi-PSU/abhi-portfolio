@@ -467,7 +467,7 @@ section.block.tight-top { padding-top: 72px; }
 
 .moto-feature {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 2.1fr;
   gap: 36px;
   align-items: center;
   margin-top: 28px;
