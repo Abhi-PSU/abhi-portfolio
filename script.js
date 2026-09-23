@@ -72,7 +72,7 @@ const prefersReducedMotion = window.matchMedia(
 
 if (!prefersReducedMotion) {
   const revealEls = document.querySelectorAll(
-    ".stat, .project, .timeline-row, .toolkit-col, .note-card, .interests-row, .edu-grid > *, .contact-grid > *"
+    ".stat, .project, .timeline-row, .toolkit-col, .note-card, .moto-feature, .edu-grid > *, .contact-grid > *"
   );
 
   revealEls.forEach((el) => el.classList.add("reveal"));
