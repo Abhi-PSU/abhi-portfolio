@@ -1,56 +1,70 @@
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
 /* ============================================================
    Program 1: Mobile nav menu toggle
    Opens/closes the mobile navigation menu and closes it again
-   whenever a link inside it is clicked.
+   when a link inside it is clicked or Escape is pressed.
    ============================================================ */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const navAnchors = navLinks.querySelectorAll("a");
+
+function setMenu(open) {
+  navLinks.classList.toggle("open", open);
+  menuToggle.setAttribute("aria-expanded", open);
+}
 
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  setMenu(!navLinks.classList.contains("open"));
 });
 
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
+navLinks.addEventListener("click", (e) => {
+  if (e.target.closest("a")) setMenu(false);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navLinks.classList.contains("open")) {
+    setMenu(false);
+    menuToggle.focus();
+  }
 });
 
 /* ============================================================
    Program 2: Scroll-spy active nav link
    Watches which page section is currently in view and highlights
-   the matching link in the nav bar.
+   the matching link in the nav bar. Sections without a nav link
+   (hero, stats, contact) clear the highlight.
    ============================================================ */
-const sections = document.querySelectorAll("main section[id]");
-const navAnchors = document.querySelectorAll(".nav-links a");
-
 const spyObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-        navAnchors.forEach((a) => {
-          a.classList.toggle("active", a.getAttribute("href") === `#${id}`);
-        });
-      }
-    });
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const hash = `#${entry.target.id}`;
+      navAnchors.forEach((a) => {
+        a.classList.toggle("active", a.hash === hash);
+      });
+    }
   },
   { rootMargin: "-45% 0px -50% 0px" }
 );
 
-sections.forEach((section) => spyObserver.observe(section));
+document.querySelectorAll("main > section").forEach((s) => spyObserver.observe(s));
 
 /* ============================================================
    Program 3: Back-to-top button
-   Shows a floating button once the visitor scrolls past the hero,
-   and smooth-scrolls back to the top of the page when clicked.
+   Shows a floating button once the hero has scrolled out of view,
+   and scrolls back to the top of the page when clicked.
    ============================================================ */
 const backToTop = document.getElementById("backToTop");
 
-window.addEventListener("scroll", () => {
-  backToTop.classList.toggle("visible", window.scrollY > 600);
-});
+new IntersectionObserver(([entry]) => {
+  backToTop.classList.toggle("visible", !entry.isIntersecting);
+}).observe(document.querySelector(".hero"));
 
 backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
 });
 
 /* ============================================================
@@ -66,25 +80,22 @@ document.getElementById("year").textContent = new Date().getFullYear();
    and blurs back out as it scrolls past, on the way down or up.
    Skipped entirely for visitors who've asked for reduced motion.
    ============================================================ */
-const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
-
 if (!prefersReducedMotion) {
   const revealEls = document.querySelectorAll(
     ".stat, .project, .timeline-row, .toolkit-col, .note-card, .moto-feature, .edu-grid > *, .contact-grid > *"
   );
 
-  revealEls.forEach((el) => el.classList.add("reveal"));
-
   const revealObserver = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
+      for (const entry of entries) {
         entry.target.classList.toggle("in-view", entry.isIntersecting);
-      });
+      }
     },
     { threshold: 0.15, rootMargin: "-5% 0px -5% 0px" }
   );
 
-  revealEls.forEach((el) => revealObserver.observe(el));
+  revealEls.forEach((el) => {
+    el.classList.add("reveal");
+    revealObserver.observe(el);
+  });
 }
