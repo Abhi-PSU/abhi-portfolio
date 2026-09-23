@@ -59,3 +59,32 @@ backToTop.addEventListener("click", () => {
    it never has to be updated by hand.
    ============================================================ */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ============================================================
+   Program 5: Scroll focus — blur content in and out of view
+   Content sharpens into focus as it scrolls into the viewport
+   and blurs back out as it scrolls past, on the way down or up.
+   Skipped entirely for visitors who've asked for reduced motion.
+   ============================================================ */
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion) {
+  const revealEls = document.querySelectorAll(
+    ".stat, .project, .timeline-row, .toolkit-col, .note-card, .interests-row, .edu-grid > *, .contact-grid > *"
+  );
+
+  revealEls.forEach((el) => el.classList.add("reveal"));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("in-view", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.15, rootMargin: "-5% 0px -5% 0px" }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+}
